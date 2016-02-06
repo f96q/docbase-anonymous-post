@@ -1,0 +1,10 @@
+ja:
+  post:
+    api_status_error: 送信に失敗しました
+    success: 送信しました
+
+  activemodel:
+    attributes:
+      post:
+        title: タイトル
+        body: 本文

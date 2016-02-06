@@ -1,0 +1,20 @@
+.page-header
+  = (ENV['POST_FORM_DESCRIPTION'] || '').html_safe
+
+= form_for @post, html: { class: 'form-horizontal' } do |f|
+  = render 'alert', { type: 'success', messages: flash[:success] ? [flash[:success]] : [] }
+  = render 'alert', { type: 'danger', messages: f.object.errors.full_messages }
+
+  .form-group
+    %label.col-sm-2.control-label= Post.human_attribute_name(:title)
+    .col-sm-10
+      = f.text_field :title, class: 'form-control'
+
+  .form-group
+    %label.col-sm-2.control-label= Post.human_attribute_name(:body)
+    .col-sm-10
+      = f.text_area :body, class: 'form-control', size: '80x30'
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit t('views.posts.submit'), class: 'btn btn-success btn-block btn-lg'
