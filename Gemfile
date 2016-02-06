@@ -34,6 +34,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'dotenv-rails'
 gem 'docbase'
+gem 'rails-i18n', '~> 5.0.0.beta3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
